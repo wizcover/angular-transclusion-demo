@@ -1,8 +1,7 @@
 !!! 5
-%html{'ng-app' => true}
+%html{'ng-app' => 'app'}
   %head
     =stylesheet_link_tag 'normalize', 'all'
     =javascript_include_tag  'all'
   %body
-    {{ 1 + 1 }}
-
+    =yield
