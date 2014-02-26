@@ -1,1 +1,2 @@
-@app = angular.module 'app', []
+@app = angular.module('app', []).controller 'app', ($scope) ->
+  $scope.global = 'PARENT'

@@ -1,4 +1,4 @@
-@app.directive 'tgRepeat', ->
+@app.directive 'tgRepeat', ($compile) ->
   restrict: 'A'
   transclude: true
   scope:
@@ -24,8 +24,8 @@
       body.append transclude_foot.contents()
 
     $scope.items.forEach (item) ->
-      scope = $scope.$new()
-      scope.item = item
-      $transclude scope, (clone) ->
+      $transclude (clone, transclusion_scope) ->
+        scope = transclusion_scope.$new()
+        scope.item = item
         item_body = angular.element('<div>').append(clone).find('tbody').find('tr').clone()
         body.append $compile(item_body)(scope)

@@ -1,11 +1,14 @@
+{{global}}
 %table{tg_repeat: true, items: "[{a: 1, b: 2, c: 3},{a: 4, b: 5, c: 6},{a: 7, b: 8, c: 9}]"}
   %thead
     %tr
+      %td PARENT
       %td A
       %td B
       %td C
   %tbody
     %tr
+      %td {{global}}
       %td
         %span{style: 'color: red'} {{item.a}}
       %td
